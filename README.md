@@ -5,7 +5,7 @@
 - express.js
 
 ## Purpose
-Designed to run as a custom service to handle contact forms on the kwcsandiego website.
+A custom service that delivers contact forms (etc.) on the kwcsandiego website.
 
 ## Credits
  1. Jason Fadelli - creator
