@@ -3,7 +3,17 @@ var router = express.Router();
 var nodemailer = require('nodemailer');
 var cors = require('cors');
 const creds = require('./config');
-const welcomeRouter = require('./welcome')
+
+const welcome = express.Router();
+
+welcome.get('/', async (req, res, next) => {
+    try {
+        res.json({ message: 'welcome to the API' })
+    }
+    catch (err) {
+        next(err)
+    }
+})
 
 var transport = {
     host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
@@ -97,10 +107,11 @@ router.post('/newProperty', (req, res, next) => {
 })
 
 
+
 const app = express()
 app.use(cors())
 app.use(express.json())
-app.use('/', welcomeRouter)
+app.use('/', welcome)
 app.use('/api/', router)
 
 app.use((err, req, res, next) => {
