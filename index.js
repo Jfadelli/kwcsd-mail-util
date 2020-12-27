@@ -3,6 +3,7 @@ var router = express.Router();
 var nodemailer = require('nodemailer');
 var cors = require('cors');
 const creds = require('./config');
+const welcomeRouter = require('./welcome')
 
 var transport = {
     host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
@@ -99,5 +100,12 @@ router.post('/newProperty', (req, res, next) => {
 const app = express()
 app.use(cors())
 app.use(express.json())
-app.use('/', router)
+app.use('/', welcomeRouter)
+app.use('/api/', router)
+
+app.use((err, req, res, next) => {
+    console.log(err)
+    res.status(500).json({ message: 'something went wrong' })
+})
+
 app.listen(3002)
