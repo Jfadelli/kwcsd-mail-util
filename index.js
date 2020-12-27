@@ -41,7 +41,7 @@ router.post('/send', (req, res, next) => {
   var email = req.body.email
   var message = req.body.message
   var intent = req.body.intent
-  var timeline = req.body.timeline
+  var timeframe = req.body.timeframe
   var content = `name: ${name} \n phone: ${phone} \n email: ${email} \n intent:${intent} \n timeline:${timeline} \n message: ${message} `
   var mail = {
     from: name,
