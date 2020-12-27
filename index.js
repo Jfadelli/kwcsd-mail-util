@@ -3,6 +3,7 @@ var router = express.Router();
 var nodemailer = require('nodemailer');
 var cors = require('cors');
 const creds = require('./config');
+const PORT = process.env.PORT || 5000;
 
 const welcome = express.Router();
 
@@ -119,4 +120,6 @@ app.use((err, req, res, next) => {
     res.status(500).json({ message: 'something went wrong' })
 })
 
-app.listen(3002)
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}...`);
+})
