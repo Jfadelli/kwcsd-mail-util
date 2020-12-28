@@ -45,7 +45,7 @@ router.post('/send', (req, res, next) => {
   var content = `name: ${name} \n phone: ${phone} \n email: ${email} \n intent:${intent} \n timeline:${timeframe} \n message: ${message} `
   var mail = {
     from: name,
-    to: 'jfadelli@gmail.com',  // Change to email address that you want to receive messages on
+    to: 'mhughes@kwcommercial.com',  // Change to email address that you want to receive messages on
     subject: 'New Message from Contact Form',
     text: content
   }
@@ -89,7 +89,7 @@ router.post('/newProperty', (req, res, next) => {
 
     var mail = {
       from: name,
-      to: 'jfadelli@gmail.com',  // Change to email address that you want to receive messages on
+      to: 'mhughes@kwcommerical.com',  // Change to email address that you want to receive messages on
       subject: 'New Property Evaluation Form Submitted',
       text: content
     }
