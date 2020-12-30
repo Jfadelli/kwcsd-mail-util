@@ -88,18 +88,11 @@ router.post('/newProperty', (req, res, next) => {
         `
 
     var mail = {
-      from: name,
-<<<<<<< HEAD
-      to: 'mhughes@kwcommercial.com',  // Change to email address that you want to receive messages to
-=======
-<<<<<<< Updated upstream
-      to: 'mhughes@kwcommerical.com',  // Change to email address that you want to receive messages on
-=======
-      to: 'mhughes@kwcommercial.com',  // Change to email address that you want to receive messages on 
->>>>>>> Stashed changes
->>>>>>> 571ba32dafbe38c4499cabd40f96bf26243a418e
-      subject: 'New Property Evaluation Form Submitted',
-      text: content
+      from: 
+        name,
+        to: 'mhughes@kwcommercial.com',  // Change to email address that you want to receive messages to
+        subject: 'New Property Evaluation Form Submitted',
+        text: content
     }
     
     transporter.sendMail(mail, (err, data) => {
