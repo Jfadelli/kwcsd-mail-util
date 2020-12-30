@@ -89,7 +89,7 @@ router.post('/newProperty', (req, res, next) => {
 
     var mail = {
       from: name,
-      to: 'mhughes@kwcommerical.com',  // Change to email address that you want to receive messages on
+      to: 'mhughes@kwcommercial.com',  // Change to email address that you want to receive messages on
       subject: 'New Property Evaluation Form Submitted',
       text: content
     }
