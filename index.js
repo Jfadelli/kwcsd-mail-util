@@ -89,7 +89,11 @@ router.post('/newProperty', (req, res, next) => {
 
     var mail = {
       from: name,
+<<<<<<< Updated upstream
       to: 'mhughes@kwcommerical.com',  // Change to email address that you want to receive messages on
+=======
+      to: 'mhughes@kwcommercial.com',  // Change to email address that you want to receive messages on 
+>>>>>>> Stashed changes
       subject: 'New Property Evaluation Form Submitted',
       text: content
     }
