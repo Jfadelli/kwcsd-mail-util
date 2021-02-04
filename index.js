@@ -43,7 +43,7 @@ router.post('/send', (req, res, next) => {
   var message = req.body.message
   var intent = req.body.intent
   var timeframe = req.body.timeframe
-  var content = `name: ${name} \n phone: ${phone} \n email: ${email} \n intent:${intent} \n timeline:${timeframe} \n message: ${message} `
+  var content = `name: ${name} \n phone: ${phone} \n email: ${email} \n intent:${intent} \n timeline:${timeframe} \n message: ${message}`
   var mail = {
     from: name,
     to: agent,  // Change to email address that you want to receive messages on
@@ -53,10 +53,12 @@ router.post('/send', (req, res, next) => {
 
   transporter.sendMail(mail, (err, data) => {
     if (err) {
+      console.log(err)
       res.json({
         status: 'fail'
       })
     } else {
+      console.log(data)
       res.json({
        status: 'success'
       })
