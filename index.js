@@ -53,12 +53,10 @@ router.post('/send', (req, res, next) => {
 
   transporter.sendMail(mail, (err, data) => {
     if (err) {
-      console.log(err)
       res.json({
         status: 'fail'
       })
     } else {
-      console.log(data)
       res.json({
        status: 'success'
       })
@@ -108,6 +106,35 @@ router.post('/newProperty', (req, res, next) => {
           })
         }
     })
+})
+
+//jasonfadelli.com
+router.post('/send/jasonfadelli', (req, res, next) => {
+  var name = req.body.name
+  var phone = req.body.phone
+  var email = req.body.email
+  var message = req.body.message
+  var content = `name: ${name} \n phone: ${phone} \n email: ${email} \n message: ${message}`
+  var mail = {
+    from: email,
+    to: 'jfadelli@gmail.com',  // Change to email address that you want to receive messages on
+    subject: 'New Message from jasonfadelli.com',
+    text: content
+  }
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      console.log(err)
+      res.json({
+        status: 'fail'
+      })
+    } else {
+      console.log(data)
+      res.json({
+       status: 'success'
+      })
+    }
+  })
 })
 
 
