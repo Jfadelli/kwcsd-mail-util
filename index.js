@@ -39,13 +39,14 @@ router.post('/send', (req, res, next) => {
   var name = req.body.name
   var phone = req.body.phone
   var email = req.body.email
+  var agent = req.body.agent
   var message = req.body.message
   var intent = req.body.intent
   var timeframe = req.body.timeframe
   var content = `name: ${name} \n phone: ${phone} \n email: ${email} \n intent:${intent} \n timeline:${timeframe} \n message: ${message} `
   var mail = {
     from: name,
-    to: 'mhughes@kwcommercial.com',  // Change to email address that you want to receive messages on
+    to: agent,  // Change to email address that you want to receive messages on
     subject: 'New Message from Contact Form',
     text: content
   }
