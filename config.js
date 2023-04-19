@@ -1,4 +1,6 @@
 module.exports = {
     USER: 'kwcsdalert@gmail.com', 
-    PASS: 'trroepcmnhlmtgfa'
+    PASS: 'bsdxoamsphzxsioj',
+    MARK: "mhughes@kwcommercial.com",
+    JASON: "jfadelli@gmail.com"
 }

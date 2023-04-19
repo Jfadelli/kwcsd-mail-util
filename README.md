@@ -2,6 +2,7 @@
 ## Libraries
 - node.js
 - cors
+  - https://www.propelauth.com/post/avoiding-cors-issues-in-react-next-js#:~:text=The%20simplest%20way%20to%20fix,server%2C%20both%20React%20and%20Next.
 - express.js
 
 ## Purpose
