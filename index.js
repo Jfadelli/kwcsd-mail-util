@@ -133,12 +133,12 @@ router.post('/send/jasonfadelli', (req, res, next) => {
     if (err) {
       console.log(err)
       res.json({
-        status: 'fail'
+        status: 'fail =('
       })
     } else {
       console.log(data)
       res.json({
-        status: 'success'
+        status: 'success!'
       })
     }
   })
