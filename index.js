@@ -148,7 +148,7 @@ router.post('/send/jasonfadelli', (req, res, next) => {
 
 const app = express()
 app.use(cors({
-  origin: '*'
+  origin: 'https://kwcsd-mail-util.herokuapp.com'
 }))
 app.use(express.json())
 app.use('/', welcome)
