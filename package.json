@@ -19,5 +19,8 @@
     "nodemailer": "^6.4.17",
     "nodemailer-sendgrid-transport": "^0.2.0",
     "nodemon": "^2.0.22"
+  },
+  "engines": {
+    "node": "19.x"
   }
 }
