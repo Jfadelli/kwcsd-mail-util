@@ -1,8 +1,9 @@
+require('dotenv').config();
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
 var cors = require('cors');
-const creds = require('./config');
+
 const PORT = process.env.PORT || 5000;
 
 const welcome = express.Router();
@@ -20,8 +21,8 @@ var transport = {
   host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
   port: 587,
   auth: {
-    user: creds.USER,
-    pass: creds.PASS
+      user: process.env.KWCSD_ALERT_USER,
+      pass: process.env.KWCSD_ALERT_PASS
   }
 }
 
@@ -54,7 +55,7 @@ router.post('/send', (req, res, next) => {
   var mail = {
     from: name,
     to: agent,  // Change to email address that you want to receive messages on
-    subject: 'New Message from Contact Form',
+    subject: 'New Message from KWCSanDiego.com contact form',
     text: content
   }
 
@@ -97,7 +98,7 @@ router.post('/newProperty', (req, res, next) => {
 
   var mail = {
     from: name,
-    to: creds.JASON,  // Change to email address that you want to receive messages to
+    to: process.env.MARK_EMAIL,  // Change to email address that you want to receive messages to
     subject: 'New Property Evaluation Form Submitted',
     text: content
   }
@@ -124,7 +125,7 @@ router.post('/send/jasonfadelli', (req, res, next) => {
   var content = `name: ${name} \nphone: ${phone} \nemail: ${email} \nmessage: ${message}`
   var mail = {
     from: email,
-    to: 'jfadelli@gmail.com',  // Change to email address that you want to receive messages on
+    to: process.env.JASON_EMAIL,  // Change to email address that you want to receive messages on
     subject: 'New Message from jasonfadelli.com',
     text: content
   }
