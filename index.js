@@ -1,4 +1,4 @@
-require('dotenv').config();
+process.env.NODE_ENV === "production" ? null: require('dotenv').config();
 let express = require("express"),
     path = require('path'),
     nodeMailer = require('nodemailer'),
