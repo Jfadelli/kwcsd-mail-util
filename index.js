@@ -20,8 +20,6 @@ router.post('/send', function (req, res) {
         secure: true,
         auth: {
             // should be replaced with real sender's account
-            //   user: process.env.KWCSD_ALERT_USER,
-            //   pass: process.env.KWCSD_ALERT_PASS
             user: process.env.KWCSD_ALERT_USER,
             pass: process.env.KWCSD_ALERT_PASS
         }
@@ -64,8 +62,6 @@ router.post('/send/jasonfadelli', function (req, res) {
         secure: true,
         auth: {
             // should be replaced with real sender's account
-            //   user: process.env.KWCSD_ALERT_USER,
-            //   pass: process.env.KWCSD_ALERT_PASS
             user: process.env.KWCSD_ALERT_USER,
             pass: process.env.KWCSD_ALERT_PASS
         }
@@ -100,10 +96,8 @@ router.post('/newProperty', function (req, res) {
         secure: true,
         auth: {
             // should be replaced with real sender's account
-            //   user: process.env.KWCSD_ALERT_USER,
-            //   pass: process.env.KWCSD_ALERT_PASS
             user: process.env.KWCSD_ALERT_USER,
-            pass: process.env.KWCSD_ALERT_PASS
+            pass: process.env.KWCSD_ALERT_PASS 
         }
     });
 
